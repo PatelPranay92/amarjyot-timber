@@ -38,48 +38,57 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} id="navbar">
-      <div className={styles.navContainer}>
-        <a href="/#home" className={styles.logo}>
-          <Image
-            src="/images/logo.png"
-            alt="Shree Amarjyot Timber Mart"
-            width={80}
-            height={80}
-            className={styles.logoImage}
-            style={{ width: 'auto' }}
-            priority
-          />
-          <div className={styles.logoText}>
-            <span className={styles.logoName}>Shree Amarjyot Timber Mart</span>
-            <span className={styles.logoDescriptor}>Wood Processing &amp; Manufacturing</span>
-          </div>
-        </a>
-
-        <div className={styles.navLinks}>
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className={styles.navLink}>
-              {item.label}
-            </a>
-          ))}
-          <a href="/#contact" className={styles.navCta}>
-            Request a Quote
+    <>
+      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} id="navbar">
+        <div className={styles.navContainer}>
+          <a href="/#home" className={styles.logo}>
+            <Image
+              src="/images/logo.png"
+              alt="Shree Amarjyot Timber Mart"
+              width={80}
+              height={80}
+              className={styles.logoImage}
+              style={{ width: 'auto' }}
+              priority
+            />
+            <div className={styles.logoText}>
+              <span className={styles.logoName}>Shree Amarjyot Timber Mart</span>
+              <span className={styles.logoDescriptor}>Wood Processing &amp; Manufacturing</span>
+            </div>
           </a>
-        </div>
 
-        <button
-          className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          id="hamburger-toggle"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+          <div className={styles.navLinks}>
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} className={styles.navLink}>
+                {item.label}
+              </a>
+            ))}
+            <a href="/#contact" className={styles.navCta}>
+              Request a Quote
+            </a>
+          </div>
+
+          <button
+            className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            id="hamburger-toggle"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
 
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ''}`}>
+        <button
+          className={`${styles.mobileClose}`}
+          onClick={() => setMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          ✕
+        </button>
         {navItems.map((item) => (
           <a
             key={item.href}
@@ -94,6 +103,6 @@ export default function Navbar() {
           Request a Quote
         </a>
       </div>
-    </nav>
+    </>
   );
 }
