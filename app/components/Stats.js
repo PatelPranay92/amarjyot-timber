@@ -13,8 +13,12 @@ const stats = [
   {
     icon: (
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <path d="M8 21h8M12 17v4" />
+        <path d="M2 8l4-3h12l4 3" />
+        <path d="M2 8h20v3H2z" />
+        <path d="M4 11v2M12 11v2M20 11v2" />
+        <path d="M2 13h20v2H2z" />
+        <path d="M6 15v3M18 15v3" />
+        <path d="M4 18h16" />
       </svg>
     ),
     number: '300+',
