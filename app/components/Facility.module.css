@@ -1,0 +1,80 @@
+.facility {
+  background-color: var(--soft-beige);
+}
+
+.facilityHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.facilityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.facilityItem {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.facilityItem:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.facilityItem img {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.facilityItem:hover img {
+  transform: scale(1.05);
+}
+
+.facilityOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 28, 26, 0);
+  transition: background var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.facilityItem:hover .facilityOverlay {
+  background: rgba(28, 28, 26, 0.3);
+}
+
+.facilityLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  letter-spacing: 0.05em;
+}
+
+.facilityItem:hover .facilityLabel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .facilityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .facilityItem:first-child {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 4/3;
+  }
+}

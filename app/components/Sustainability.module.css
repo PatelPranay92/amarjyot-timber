@@ -1,0 +1,107 @@
+.sustainability {
+  background-color: var(--warm-white);
+}
+
+.sustainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sustainImage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  order: 2;
+}
+
+.sustainImage img {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sustainImage:hover img {
+  transform: scale(1.03);
+}
+
+.sustainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  order: 1;
+}
+
+.sustainDesc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.sustainPractices {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.sustainPractice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sustainIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--soft-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sustainIcon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--natural-wood);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.sustainPracticeTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.sustainPracticeDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .sustainGrid {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sustainGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sustainImage {
+    order: 1;
+  }
+
+  .sustainContent {
+    order: 2;
+  }
+}

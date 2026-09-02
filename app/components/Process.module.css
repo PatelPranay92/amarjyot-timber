@@ -1,0 +1,122 @@
+.process {
+  background: linear-gradient(180deg, var(--soft-beige) 0%, var(--warm-white) 100%);
+}
+
+.processHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 72px;
+}
+
+/* Desktop horizontal timeline */
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.timelineStep {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 16px;
+}
+
+.timelineDot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.timelineDot span {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--natural-wood);
+}
+
+.timelineStep:hover .timelineDot {
+  background: var(--natural-wood);
+  border-color: var(--natural-wood);
+  transform: scale(1.1);
+}
+
+.timelineStep:hover .timelineDot span {
+  color: var(--white);
+}
+
+.timelineTitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.timelineDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 180px;
+}
+
+/* Mobile vertical timeline */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 28px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .timelineStep {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0 40px 0;
+  }
+
+  .timelineDot {
+    margin-bottom: 0;
+    margin-right: 24px;
+    flex-shrink: 0;
+  }
+
+  .timelineText {
+    padding-top: 8px;
+  }
+
+  .timelineDesc {
+    max-width: none;
+  }
+}
