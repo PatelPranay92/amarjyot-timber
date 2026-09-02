@@ -37,7 +37,7 @@ export default function About() {
             <p className={styles.aboutDescription}>
               With decades of experience in the timber industry, we provide
               comprehensive wood processing solutions tailored to meet the diverse
-              needs of manufacturers, builders, and contractors.
+              needs of manufacturers.
             </p>
 
             <div className={styles.aboutFeatures}>
