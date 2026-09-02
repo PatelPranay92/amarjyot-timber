@@ -18,7 +18,7 @@ const stats = [
       </svg>
     ),
     number: '300+',
-    label: 'Wood Processing Capacity',
+    label: 'Wood Pallets Capacity',
   },
   {
     icon: (
